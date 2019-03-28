@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="calc.js"></script>
+        <script>
+            function updateUI(choice){
+                var s1 = window.document.forms[0].elements[0].value;
+                var s2 = window.document.forms[0].elements[1].value;
+                var n1 = parseInt(s1);
+                var n2 =  parseInt(s2);
+                if(isNaN(n1)|| isNaN(n2)){
+                    window.document.getElementById('outputparam').innerText="Invalid Input";
+                    window.document.getElementById('outputparam').style.color="red";
+                    return;
+                }
+                var res = calculator(choice,n1,n2);
+                window.document.getElementById('outputparam').innerText=res;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Calculator</h1>
+        <form>
+            <label>First Number:</label>
+            <input type="text">
+            <br>
+            <br>
+            <label>second Number:</label>
+            <input type="text">
+            <br>
+            <br>
+            <input type="button" value="add" onclick="updateUI(1)">
+            <input type="button" value="sub" onclick="updateUI(2)">
+            <input type="button" value="mul" onclick="updateUI(3)">
+            <input type="button" value="div" onclick="updateUI(4)">
+            <br>
+            <br>
+            <p id="outputparam"></p>
+        </form>
+    </body>
+</html>

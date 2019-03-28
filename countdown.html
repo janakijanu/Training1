@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var data;
+            function decreasevalue(){
+                data= document.getElementById('content').innerText;
+                data= parseInt(data);
+                if(!isNaN(data)){
+                    data--;
+                    document.getElementById('content').innerText=data;
+                }
+            }
+            function starttask(){
+                myinterval;
+            }
+
+            var myinterval = setInterval(decreasevalue,1000);
+            
+            
+            function stoptask(){
+                clearInterval(myinterval);
+            }
+
+        </script>
+    </head>
+    <body onclick="starttask()" ondblclick="stoptask()"> 
+        <h1 id="content">100</h1>
+    </body>
+</html>

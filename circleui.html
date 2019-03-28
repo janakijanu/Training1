@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="circle.js"></script>
+        <script>
+            var c = new circle(0,0,0);
+            function updatemodel(){
+                var s1 =window.document.forms[0].elements[0].value;
+                var s2 =window.document.forms[0].elements[1].value;
+                var s3 =window.document.forms[0].elements[2].value;
+                var n1= parseInt(s1);
+                var n2= parseInt(s2);
+                var n3= parseInt(s3);
+                if(isNaN(n1)|| isNaN(n2) || isNaN(n3)){
+                    return;
+                }
+                //c = new circle(n2,n3,n1);
+                c.setx(n2);
+                c.sety(n3);
+                c.setradius(n1);
+                res1 = c.getarea();
+                res2 = c.getcircumference();
+                res3 = c.getx();
+                res4 = c.gety();
+                res5 = c.getradius();
+                updateUI();
+            }
+            function updateUI(){
+                window.document.getElementById('output4').innerText=res1;
+                window.document.getElementById('output5').innerText=res2;
+                window.document.getElementById('output1').innerText=res3;
+                window.document.getElementById('output2').innerText=res4;
+                window.document.getElementById('output3').innerText=res5;
+            }        
+        </script>
+    </head>
+    <body>
+        <form>
+            <label>Radius</label>
+            <input type="text">
+            <br>
+            <br>
+            <label>X Co-ordinate</label>
+            <input type="text">
+            <br>
+            <br>
+            <label>Y Co-ordinate</label>
+            <input type="text">
+            <br>
+            <br>
+            <input type="button" value="Action" onclick="updatemodel()">
+            <br>
+            <table>
+                <tr>
+                    <td>Midpoint X</td>
+                    <td id="output1"></td>
+                </tr>
+                <tr>
+                    <td>Midpoint Y</td>
+                    <td id="output2"></td>
+                </tr>
+                <tr>
+                    <td>Radius</td>
+                    <td id="output3"></td>
+                </tr>
+                <tr>
+                    <td>Area</td>
+                    <td id="output4"></td>
+                </tr>
+               <tr>
+                    <td>Circumference</td>
+                    <td id="output5"></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

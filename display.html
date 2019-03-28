@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function changecontent(){
+                var element = window.document.getElementById('pagetitle');
+                var content = element.innerText;
+                var newcontent = content.toUpperCase();
+                element.innerText=newcontent;
+            }
+            function changepcontent(){
+                var ele = window.document.getElementById('pagecontent');
+                var con = ele.innerText;
+                var newc = con.toUpperCase();
+                ele.innerText=newc;
+            }
+        </script>
+    </head>
+    <body >
+        <h1 id="pagetitle" onclick="changecontent()">Welcome</h1>
+        <p id="pagecontent" onclick="changepcontent()">This is the paragraph</p>
+    </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="employee.js"></script>
+        <script>
+            var c = new employee(0,0,0,0);
+            function updatemodel(){
+                var s1 =window.document.forms[0].elements[0].value;
+                var s2 =window.document.forms[0].elements[1].value;
+                var s3 =window.document.forms[0].elements[2].value;
+                var s4 =window.document.forms[0].elements[3].value;                
+                var n1= parseInt(s3);                
+                if(isNaN(n1)){
+                    return;
+                }
+                //c = new circle(n2,n3,n1);
+                c.setId(s1);
+                c.setName(s2);
+                c.setBasicsalary(n1);
+                c.setGrade(s4);
+                res1 = c.getAllowance();
+                res2 = c.getTax();
+                res3 = c.getId();
+                res4 = c.getName();
+                res5 = c.getBasicsalary();
+                res6 = c.gatNetsalary();
+                res7 = c.getGrade();
+                updateUI();
+            }
+            function updateUI(){
+                window.document.getElementById('output4').innerText=res1;
+                window.document.getElementById('output5').innerText=res2;
+                window.document.getElementById('output6').innerText=res6;
+                window.document.getElementById('output1').innerText=res3;
+                window.document.getElementById('output2').innerText=res4;
+                window.document.getElementById('output3').innerText=res5;
+            }        
+        </script>
+    </head>
+    <body>
+        <form>
+            <label>ID</label>
+            <input type="text">
+            <br>
+            <br>
+            <label>Name</label>
+            <input type="text">
+            <br>
+            <br>
+            <label>Basic Salary</label>
+            <input type="text">
+            <br>
+            <br>
+            <label>grade</label>
+            <select id="select">
+                <option>A</option>
+                <option>B</option>
+                <option>C</option>
+            </select>
+            <br>
+            <br>
+            <input type="button" value="Display" onclick="updatemodel()">
+            <br>
+            <br>
+            <table border="1">
+                <tr>
+                    <td>ID</td>
+                    <td>Name</td>
+                    <td>Basic Salary</td>
+                    <td>Allowance</td>
+                    <td>Tax</td>
+                    <td>Net Salary</td>                    
+                </tr>
+                <tr>
+                    <td id="output1"></td>
+                    <td id="output2"></td>
+                    <td id="output3"></td>
+                    <td id="output4"></td>
+                    <td id="output5"></td>                    
+                    <td id="output6"></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
